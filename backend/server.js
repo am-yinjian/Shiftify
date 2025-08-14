@@ -15,5 +15,5 @@ console.log(process.env.MONGO_URI);
 app.listen(PORT, () => {
   connectDB();
   console.log(`Server started at port ${PORT}`);
- 
+  
 });
