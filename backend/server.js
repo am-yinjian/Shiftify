@@ -7,15 +7,18 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// Importing routes
+// // Importing routes
 import usersRoutes from './routes/users.route.js';
-import scheduleRoutes from './routes/schedule.routes.js';
-import shiftsRoutes from './routes/shifts.routes.js';
+import scheduleRoutes from './routes/schedule.route.js';
+import shiftsRoutes from './routes/shifts.route.js';
 
 const PORT = 5002;
 
 // the endpoint to collect form data (this will need to be passed back to the db)
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Shiftify API!');
+});
 
 app.listen(PORT, () => {
   connectDB();

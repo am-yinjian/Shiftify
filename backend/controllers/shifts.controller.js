@@ -1,6 +1,7 @@
 
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 import { Shift } from "../models/shifts.model.js";
+
 
 export const getShifts = async (req, res) => {
     try {
@@ -75,23 +76,22 @@ export const deleteShifts = async (req, res) => {
         res.status(500).json({ success: false, message: "Server Error" });
     }
 };
-import mongoose from "mongoose";
-import Users from "../models/shifts.route.js";
 
 
-export const createShift = async (req, res) => {
-    const shift = req.body; 
 
-    if (!shifts) {
-        return res.status(400).json({ success: false, message: "Please provide all fields" });
-    }
-    const newShift = new ShiftSchema(shift);
+// export const createShift = async (req, res) => {
+//     const shift = req.body; 
 
-    try {
-        await newShift.save();
-        res.status(201).json({ success: true, data: newUsers });
-    } catch (error) {
-        console.error("Error in Create product:", error.message);
-        res.status(500).json({ success: false, message: "Server Error" });
-    }
-};
+//     if (!shifts) {
+//         return res.status(400).json({ success: false, message: "Please provide all fields" });
+//     }
+//     const newShift = new ShiftSchema(shift);
+
+//     try {
+//         await newShift.save();
+//         res.status(201).json({ success: true, data: newUsers });
+//     } catch (error) {
+//         console.error("Error in Create product:", error.message);
+//         res.status(500).json({ success: false, message: "Server Error" });
+//     }
+// };

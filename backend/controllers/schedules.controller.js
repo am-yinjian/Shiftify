@@ -1,5 +1,6 @@
 
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
+
 import { Schedule } from "../models/schedule.model.js";
 
 export const getSchedules = async (req, res) => {
