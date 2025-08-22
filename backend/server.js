@@ -5,6 +5,12 @@ import { connectDB } from './config/db.js';
 dotenv.config();
 
 const app = express();
+app.use(express.json());
+
+// // Importing routes
+import usersRoutes from './routes/users.route.js';
+import scheduleRoutes from './routes/schedule.route.js';
+import shiftsRoutes from './routes/shifts.route.js';
 
 const PORT = process.env.PORT || 5002;
  
