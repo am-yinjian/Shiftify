@@ -6,17 +6,11 @@ dotenv.config();
 
 const app = express();
 
-const PORT = 5002;
+const PORT = process.env.PORT || 5002;
  
-app.get("/products", (req, res)=> {
-  res.send("Products endpoint is working!");
-  // res.render("poopy");
-});
-app.get("/", (req, res)=> {
-  res.send("Products endpoint is working!");
-});
+app.use(express.json());
 
-// console.log(process.env.MONGO_URI);
+// app.use('/api/users', userRoutes);  
 
 app.listen(PORT, () => {
   connectDB();
