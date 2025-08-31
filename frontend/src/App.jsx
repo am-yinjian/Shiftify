@@ -5,12 +5,11 @@ import './App.css'
 
 import Home from "./pages/Home.jsx";
 import Availability from "./pages/Availability.jsx";
+import CreateSchedule from "./pages/CreateSchedule.jsx";
 // import ViewSchedules from "./pages/ViewSchedules.jsx";
-// import CreateSchedule from "./pages/CreateSchedule.jsx";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
       <NavBar />
@@ -19,6 +18,7 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/availability" element={<Availability />} />
+          <Route path="/create_schedule" element={<CreateSchedule />} />
         </Routes>
       </main>
 

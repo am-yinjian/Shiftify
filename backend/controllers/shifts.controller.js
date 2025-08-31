@@ -14,24 +14,22 @@ export const getShifts = async (req, res) => {
 };
 
 export const createShifts = async (req, res) => {
-    const { worker, startTime, endTime, notes } = req.body;
-
-    if (!worker || !startTime || !endTime) {
-        return res.status(400).json({ success: false, message: "Please provide worker, startTime, and endTime" });
+    const {worker, shifts} = req.body;
+    if (!worker || !shifts) {
+        return res.status(400).json({ success: false, message: "Please provide worker and array of shifts" });
     }
-
-    const newShift = new Shift({
-        worker,
-        startTime,
-        endTime,
-        notes: notes || "",
-    });
-
     try {
-        await newShift.save();
-        res.status(201).json({ success: true, data: newShift });
+        const newShifts = shifts.map(shift => ({
+            worker,
+            startTime: shift.startTime,
+            endTime: shift.endTime,
+            notes: shift.notes || ""
+        }));
+
+        const savedShifts = await Shift.insertMany(newShifts); // bulk insert
+        res.status(201).json({ success: true, data: savedShifts });
     } catch (error) {
-        console.error("Error in Create shift:", error.message);
+        console.error("Error creating shifts:", error.message);
         res.status(500).json({ success: false, message: "Server Error" });
     }
 };
