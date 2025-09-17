@@ -1,4 +1,6 @@
-/* Page wrapper */
+/* ===========================
+   Page wrapper
+   =========================== */
 .availability-container {
   max-width: 700px;
   margin: 2rem auto;
@@ -10,14 +12,18 @@
   color: #333;
 }
 
-/* Form heading */
+/* ===========================
+   Form heading
+   =========================== */
 .availability-container h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: rgb(248, 162, 162);
 }
 
-/* Name field */
+/* ===========================
+   Name field
+   =========================== */
 .name-field {
   margin-bottom: 1.5rem;
   font-size: 1rem;
@@ -38,7 +44,9 @@
   box-shadow: 0 0 0 2px rgba(248, 162, 162, 0.2);
 }
 
-/* Day row */
+/* ===========================
+   Day rows
+   =========================== */
 .availability-day {
   display: flex;
   flex-direction: column;
@@ -60,7 +68,9 @@
   color: #444;
 }
 
-/* Date pill */
+/* ===========================
+   Date pill
+   =========================== */
 .date-pill {
   display: inline-block;
   margin-left: 8px;
@@ -71,20 +81,31 @@
   border-radius: 12px;
 }
 
-/* Checkbox */
+/* ===========================
+   Checkbox
+   =========================== */
 .availability-day input[type="checkbox"] {
   accent-color: #63dd8a;
   margin-right: 0.5rem;
   transform: scale(1.2);
 }
 
-/* Time fields */
+/* ===========================
+   Time fields
+   =========================== */
 .time-fields {
   margin-top: 0.5rem;
   margin-left: 1.5rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.time-fields label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #333;
 }
 
 .time-fields input[type="time"] {
@@ -101,7 +122,9 @@
   box-shadow: 0 0 0 2px rgba(248, 162, 162, 0.2);
 }
 
-/* Submit button */
+/* ===========================
+   Submit button
+   =========================== */
 .availability-container input[type="submit"] {
   display: block;
   margin: 2rem auto 0;
@@ -117,4 +140,86 @@
 
 .availability-container input[type="submit"]:hover {
   background: rgb(55, 162, 105);
+}
+
+/* ===========================
+   Month calendar
+   =========================== */
+.month-calendar {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.calendar-header button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.calendar-header button:hover {
+  background: #2980b9;
+}
+
+/* Calendar grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.calendar-day {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.calendar-day:hover {
+  background: #e0f0ff;
+  transform: translateY(-1px);
+}
+
+.calendar-instructions {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* ===========================
+   Back button
+   =========================== */
+.back-button {
+  background: none;
+  border: none;
+  color: #3498db;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.back-button:hover {
+  text-decoration: underline;
 }
