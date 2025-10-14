@@ -18,7 +18,13 @@ import shiftsRoutes from './routes/shifts.route.js';
 const PORT = process.env.PORT || 5002;
 
 
-app.use(cors()); // allows all origins by default
+// Configure CORS to allow frontend requests
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:3000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use('/api/users', usersRoutes);  
 app.use('/api/schedules', scheduleRoutes);  
 app.use('/api/shifts', shiftsRoutes);  
