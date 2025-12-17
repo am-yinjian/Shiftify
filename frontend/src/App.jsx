@@ -6,7 +6,7 @@ import './App.css'
 import Home from "./pages/Home.jsx";
 import Availability from "./pages/Availability.jsx";
 import CreateSchedule from "./pages/CreateSchedule.jsx";
-// import ViewSchedules from "./pages/ViewSchedules.jsx";
+import ViewSchedules from "./pages/ViewSchedules.jsx";
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/availability" element={<Availability />} />
           <Route path="/create_schedule" element={<CreateSchedule />} />
+          <Route path="/view_schedules" element={<ViewSchedules />} />
         </Routes>
       </main>
 
