@@ -4,7 +4,6 @@ import { User } from "../models/users.model.js";
 // Get all users
 export const getUsers = async (req, res) => {
   try {
-    // no need to populate "shifts" since User schema doesn't need them directly
     const users = await User.find({});
     res.status(200).json({ success: true, data: users });
   } catch (error) {
